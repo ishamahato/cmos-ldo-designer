@@ -1,0 +1,29 @@
+{
+  "n_samples": 200,
+  "n_ok": 200,
+  "seed": 2026,
+  "assumptions": {
+    "A_VT_mV_um": 8.0,
+    "sigma_R_pct": 0.25,
+    "sigma_vref_pct": 0.5,
+    "sigma_iref_pct": 5.0
+  },
+  "vout_mean": 1.2011292199999999,
+  "vout_sigma_mv": 11.223904811951082,
+  "vout_min": 1.173704,
+  "vout_max": 1.230471,
+  "ea_offset_sigma_mv": 4.813427567167397,
+  "ea_offset_mean_mv": 0.223105767192629,
+  "i_tail_mean_ua": 15.89027565,
+  "i_tail_sigma_ua": 1.3745011356668004,
+  "ignd_mean_ua": 48.20199999999977,
+  "ignd_sigma_ua": 3.3996003312243417,
+  "pm_min_deg": 65.44455939217369,
+  "pm_mean_deg": 70.32767806997369,
+  "yield_pct": 97.5,
+  "yield_ci95_pct": [
+    94.28208558483828,
+    98.92754385292122
+  ],
+  "yield_criteria": "|Vout err| <= 2.0 % at 2.5 V/10 mA and PM >= 45.0 deg"
+}

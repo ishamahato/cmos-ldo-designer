@@ -1,0 +1,17 @@
+test,target,measured,result,condition,note
+1. Output voltage accuracy (nominal),1.2 V +/- 2.0 %,1.2006 V (+0.05 %),PASS,"tt, 27 C, 2.5 V, 10 mA",
+1b. Output voltage accuracy (PVT),+/- 2.0 %,1.1883-1.2062 V (max 0.97 %),PASS,5 corners x 4 temps x 3 Vin x 2 loads,worst: sf 125C Vin=1.8 I=50mA
+2. Line regulation,<= 10.0 mV/V,2.959 mV/V,PASS,"Vin 1.8-3.3 V, 1 & 50 mA",
+3. Load regulation,<= 0.5 mV/mA,0.2043 mV/mA,PASS,"1-50 mA, Vin = 1.8/2.5/3.3 V (worst)",
+4. Dropout voltage @ 50 mA,<= 0.6 V,0.336 V,PASS,"tt, 27 C",defined at Vout = 98 % of regulated value
+4b. Dropout @ 50 mA (PVT worst),<= 0.6 V,0.476 V,PASS,5 corners x 4 temps,
+5. Power efficiency,>= 95 % of Vout/Vin limit at 50 mA,"66.2 % @1.8 V/50 mA (limit 66.7 %), 36.3 % @3.3 V/50 mA (limit 36.4 %)",PASS,"tt, 27 C",LDO efficiency is bounded by Vout/Vin
+6. Quiescent current,<= 100.0 uA,52.7 uA,PASS,"no load, Vin up to 3.3 V",
+6b. Quiescent current (PVT worst),<= 100.0 uA,55.3 uA,PASS,"Vin = 3.3 V, all corners/temps",
+7. Phase margin,>= 45.0 deg,68.1 deg (min),PASS,"tt, 9 Vin/load points",
+7b. Phase margin (PVT),>= 45.0 deg,46.4 deg (min),PASS,120 PVT points,worst: sf -40C Vin=1.8 I=1mA
+8. Gain margin,>= 10.0 dB,52.0 dB,PASS,"tt, 9 Vin/load points",
+9. Load transient 1<->50 mA (1 us),<= 60.0 mV,"-26.1 / +20.5 mV, settle 1.8/5.3 us",PASS,Vin = 2.5 V,
+10. Temperature variation (tt),inside accuracy window,"Vout span 14.0 mV over -40..125 C, all Vin/loads",PASS,tt corner,
+11. Parameter sensitivity,documented,see results/sweeps,INFO,one-at-a-time sweeps,
+12. Monte Carlo yield,>= 99 % (educational model),"97.5 % (95 % CI 94.3-98.9 %), sigma(Vout) = 11.22 mV",FAIL,200 samples,assumed mismatch statistics

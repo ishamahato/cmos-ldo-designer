@@ -1,0 +1,14 @@
+{
+  "n_conditions": 120,
+  "n_failed_sims": 0,
+  "vout_min": 1.166208,
+  "vout_max": 1.204635,
+  "vout_err_max_pct": 2.816000000000004,
+  "pm_min_deg": 29.80071650706296,
+  "gm_min_db": 61.1362866361569,
+  "all_stable": true,
+  "iq_max_ua": 40.3185,
+  "dropout_max_v": 0.642307589649677,
+  "worst_accuracy_condition": "sf 27C Vin=1.8 I=50mA",
+  "worst_pm_condition": "sf -40C Vin=1.8 I=1mA"
+}

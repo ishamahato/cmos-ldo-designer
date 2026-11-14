@@ -1,0 +1,18 @@
+{
+  "optimized": {
+    "mirror_size": "5.0/1.0 x1",
+    "mc_samples": 60,
+    "ea_offset_sigma_mv": 4.52094126205021,
+    "vout_sigma_mv": 10.634289061631144,
+    "pm_nominal_deg": 79.75043386544108,
+    "pm_worst_pvt_deg (sf,-40C,1.8V,1mA)": 46.3814814949705
+  },
+  "optimized_bigmirror": {
+    "mirror_size": "5/4 x4",
+    "mc_samples": 60,
+    "ea_offset_sigma_mv": 2.3049340409715655,
+    "vout_sigma_mv": 6.62525271203334,
+    "pm_nominal_deg": 77.57780525298747,
+    "pm_worst_pvt_deg (sf,-40C,1.8V,1mA)": 40.6264686168264
+  }
+}

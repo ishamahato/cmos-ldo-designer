@@ -1,0 +1,21 @@
+ref,type,block,nodes,function,model,value,w_um,l_um,m,w_total_um
+VREF,V,Bias & reference,vref 0,"0.6 V reference voltage (ideal, see limitations)",,DC 0.6,,,,
+IREF,I,Bias & reference,vin nb,"Reference bias current (ideal, stands in for bandgap current)",,DC 5.000000e-06,,,,
+MNB1,nmos,Bias & reference,nb nb 0 0,Diode-connected NMOS: converts IREF to bias voltage NB,sky130_fd_pr__nfet_g5v0d10v5,5/1 x1,5.0,1.0,1.0,5.0
+MNB2,nmos,Bias & reference,pb nb 0 0,NMOS mirror: copies IREF into the PMOS bias diode,sky130_fd_pr__nfet_g5v0d10v5,5/1 x1,5.0,1.0,1.0,5.0
+MPB1,pmos,Bias & reference,pb pb vin vin,Diode-connected PMOS: generates tail bias voltage PB,sky130_fd_pr__pfet_g5v0d10v5,20/1 x1,20.0,1.0,1.0,20.0
+MP5,pmos,Error amplifier,tail pb vin vin,Tail current source of the differential pair,sky130_fd_pr__pfet_g5v0d10v5,20/1 x2,20.0,1.0,2.0,40.0
+MP1,pmos,Error amplifier,d1 vref tail tail,"Input transistor, inverting input (VREF)",sky130_fd_pr__pfet_g5v0d10v5,20/1 x2,20.0,1.0,2.0,40.0
+MP2,pmos,Error amplifier,d2 fb tail tail,"Input transistor, non-inverting input (feedback FB)",sky130_fd_pr__pfet_g5v0d10v5,20/1 x2,20.0,1.0,2.0,40.0
+MN3,nmos,Error amplifier,d1 d1 0 0,Diode load of MP1,sky130_fd_pr__nfet_g5v0d10v5,5/1 x1,5.0,1.0,1.0,5.0
+MN4,nmos,Error amplifier,d2 d2 0 0,Diode load of MP2,sky130_fd_pr__nfet_g5v0d10v5,5/1 x1,5.0,1.0,1.0,5.0
+MN6,nmos,Error amplifier,gate d2 0 0,Output pull-down: mirrors MP2 current (xB),sky130_fd_pr__nfet_g5v0d10v5,5/1 x1,5.0,1.0,1.0,5.0
+MN7,nmos,Error amplifier,x d1 0 0,Mirrors MP1 current (xB) into PMOS mirror,sky130_fd_pr__nfet_g5v0d10v5,5/1 x1,5.0,1.0,1.0,5.0
+MP8,pmos,Error amplifier,x x vin vin,PMOS mirror diode,sky130_fd_pr__pfet_g5v0d10v5,20/1 x1,20.0,1.0,1.0,20.0
+MP9,pmos,Error amplifier,gate x vin vin,Output pull-up: mirrors MP8 current; drives pass gate,sky130_fd_pr__pfet_g5v0d10v5,20/1 x1,20.0,1.0,1.0,20.0
+MPASS,pmos,Pass device,vout gate vin vin,PMOS pass transistor delivering load current,sky130_fd_pr__pfet_g5v0d10v5,20/0.5 x170,20.0,0.5,170.0,3400.0
+R1,R,Feedback network,vout fb,Upper feedback resistor,,1.200000e+05,,,,
+R2,R,Feedback network,fb 0,Lower feedback resistor,,1.200000e+05,,,,
+COUT,C,Compensation,vout co,Output capacitor,,1.000000e-06,,,,
+RC,R,Compensation,co 0,Series compensation resistance / ESR (creates LHP zero),,5.000000e-01,,,,
+CFF,C,Compensation,vout fb,Feed-forward capacitor across R1 (zero/pole pair),,1.000000e-11,,,,

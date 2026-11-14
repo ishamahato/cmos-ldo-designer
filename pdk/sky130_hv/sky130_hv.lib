@@ -1,0 +1,52 @@
+* Minimal SKY130 5V-device library extracted from google/skywater-pdk-libs-sky130_fd_pr (Apache-2.0)
+* Contains only sky130_fd_pr__nfet_g5v0d10v5 and sky130_fd_pr__pfet_g5v0d10v5 for the 5 corners.
+
+.lib tt
+.option scale=1.0u
+.include "lod.spice"
+.param hv_dlc_rotweak=0 sky130_fd_pr__nfet_g5v0d10v5__dlc_rotweak=0 sky130_fd_pr__pfet_g5v0d10v5__dlc_rotweak=0
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice"
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice"
+.endl
+
+.lib ff
+.option scale=1.0u
+.include "lod.spice"
+.param hv_dlc_rotweak=0 sky130_fd_pr__nfet_g5v0d10v5__dlc_rotweak=0 sky130_fd_pr__pfet_g5v0d10v5__dlc_rotweak=0
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ff.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ff.corner.spice"
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice"
+.endl
+
+.lib ss
+.option scale=1.0u
+.include "lod.spice"
+.param hv_dlc_rotweak=0 sky130_fd_pr__nfet_g5v0d10v5__dlc_rotweak=0 sky130_fd_pr__pfet_g5v0d10v5__dlc_rotweak=0
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__ss.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__ss.corner.spice"
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice"
+.endl
+
+.lib fs
+.option scale=1.0u
+.include "lod.spice"
+.param hv_dlc_rotweak=0 sky130_fd_pr__nfet_g5v0d10v5__dlc_rotweak=0 sky130_fd_pr__pfet_g5v0d10v5__dlc_rotweak=0
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__fs.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__fs.corner.spice"
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice"
+.endl
+
+.lib sf
+.option scale=1.0u
+.include "lod.spice"
+.param hv_dlc_rotweak=0 sky130_fd_pr__nfet_g5v0d10v5__dlc_rotweak=0 sky130_fd_pr__pfet_g5v0d10v5__dlc_rotweak=0
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__sf.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__sf.corner.spice"
+.include "nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice"
+.include "pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice"
+.endl

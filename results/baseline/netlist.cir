@@ -1,0 +1,28 @@
+* DC operating point | design=baseline corner=tt T=27.0C
+.lib "pdk/sky130_hv/sky130_hv.lib" tt
+.temp 27
+.options savecurrents=0 reltol=1e-4
+VIN vin 0 DC 2.5
+* ---- LDO regulator ----
+VREF vref 0 DC 0.6
+IREF vin nb DC 5.000000e-06
+XMNB1 nb nb 0 0 sky130_fd_pr__nfet_g5v0d10v5 w=5 l=1 m=1
+XMNB2 pb nb 0 0 sky130_fd_pr__nfet_g5v0d10v5 w=5 l=1 m=1
+XMPB1 pb pb vin vin sky130_fd_pr__pfet_g5v0d10v5 w=20 l=1 m=1
+XMP5 tail pb vin vin sky130_fd_pr__pfet_g5v0d10v5 w=20 l=1 m=2
+XMP1 d1 vref tail tail sky130_fd_pr__pfet_g5v0d10v5 w=20 l=1 m=2
+XMP2 d2 fb tail tail sky130_fd_pr__pfet_g5v0d10v5 w=20 l=1 m=2
+XMN3 d1 d1 0 0 sky130_fd_pr__nfet_g5v0d10v5 w=5 l=1 m=1
+XMN4 d2 d2 0 0 sky130_fd_pr__nfet_g5v0d10v5 w=5 l=1 m=1
+XMN6 gate d2 0 0 sky130_fd_pr__nfet_g5v0d10v5 w=5 l=1 m=1
+XMN7 x d1 0 0 sky130_fd_pr__nfet_g5v0d10v5 w=5 l=1 m=1
+XMP8 x x vin vin sky130_fd_pr__pfet_g5v0d10v5 w=20 l=1 m=1
+XMP9 gate x vin vin sky130_fd_pr__pfet_g5v0d10v5 w=20 l=1 m=1
+XMPASS vout gate vin vin sky130_fd_pr__pfet_g5v0d10v5 w=20 l=0.5 m=170
+R1 vout fb 1.200000e+05
+R2 fb 0 1.200000e+05
+COUT vout co 1.000000e-06
+RC co 0 5.000000e-01
+CFF vout fb 1.000000e-11
+RL vout 0 1.200000e+02
+.end
